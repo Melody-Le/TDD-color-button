@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { logRoles } from "@testing-library/dom";
 import App from "./App";
 import { replaceCamelWithSpaces } from "./App";
 
@@ -67,6 +66,8 @@ test("Disabled button has gray background and reverts to MidnightBlue", () => {
 
   fireEvent.click(checkbox);
   expect(button).toHaveStyle({ backgroundColor: "MidnightBlue" });
+  // expect(button).toHaveTextContent("Change to Medium Violet Red");
+  expect(button).toHaveTextContent("Change to Medium Violet Red");
 });
 
 describe("spaces before camel-case capital letters", () => {
